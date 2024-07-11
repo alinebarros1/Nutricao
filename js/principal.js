@@ -8,8 +8,15 @@
 //alterando o conteudo do H1
 	titulo.textContent = "Aparecida nutricionista";
 
-    var paciente = document.querySelector("#primeiro-paciente");
-    console.log(paciente);
+    //paciente individualmente --> var paciente = document.querySelector("#primeiro-paciente");
+    //pegar todos os pacientes de uma vez
+    var pacientes = document.querySelectorAll(".paciente");
+    console.log(pacientes);
+
+    //length percorre todo o arrei e le ate o ultimo paciente da lista
+    for (var i =0; i<pacientes.length; i++){
+        console.log(i);
+    }
 
     //----- peso
     var tdpeso = paciente.querySelector(".info-peso");
