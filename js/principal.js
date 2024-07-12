@@ -11,24 +11,21 @@
     //paciente individualmente --> var paciente = document.querySelector("#primeiro-paciente");
     //pegar todos os pacientes de uma vez
     var pacientes = document.querySelectorAll(".paciente");
-    console.log(pacientes);
+    
 
     //length percorre todo o arrei e le ate o ultimo paciente da lista
     for (var i =0; i<pacientes.length; i++){
-        console.log(i);
-    }
+        
+    // todo paciente vai ser paciente[i]
+    var paciente = pacientes[i];
 
     //----- peso
     var tdpeso = paciente.querySelector(".info-peso");
-    console.log(tdpeso);
     var peso = tdpeso.textContent;
-    console.log(peso);
 
     //----- altura 
     var tdAltura = paciente.querySelector(".info-altura");
-    console.log(tdAltura);
     var altura = tdAltura.textContent;
-    console.log(altura);
 
     var tdImc = paciente.querySelector(".info-imc");
 
@@ -38,14 +35,13 @@
 
     //validação 
     if(peso <= 0  || peso >= 1000) {
-        console.log("Peso invalido");
+        
         //inserindo falso se obedecer a condição do if
         pesoEhValido = false;
         tdImc.textContent = "Peso invalido!";
     }
 
     if(altura <= 0  || altura >= 3.00) {
-        console.log("Altura invalido");
         alturaEhValida = false
         tdImc.textContent = "Altura invalida!";
     }
@@ -56,17 +52,12 @@
     //----- calculo do imc
     //coloco () no calculo que eu quero que faça primeiro
     var imc = peso / (altura * altura);
-    console.log(imc);
-
-    tdImc.textContent = imc;
+    //tofixed coloca pra mostra somente duas casa decimais
+    tdImc.textContent = imc.toFixed(2);
     }
+    
 
-    else {
-        console.log("Ajuste a altura ou o peso")
     }
-
-
-
 
     
 
