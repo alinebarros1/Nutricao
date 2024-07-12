@@ -15,48 +15,51 @@
 
     //length percorre todo o arrei e le ate o ultimo paciente da lista
     for (var i =0; i<pacientes.length; i++){
-        
-    // todo paciente vai ser paciente[i]
-    var paciente = pacientes[i];
+            
+        // todo paciente vai ser paciente[i]
+        var paciente = pacientes[i];
 
-    //----- peso
-    var tdpeso = paciente.querySelector(".info-peso");
-    var peso = tdpeso.textContent;
+        //----- peso
+        var tdpeso = paciente.querySelector(".info-peso");
+        var peso = tdpeso.textContent;
 
-    //----- altura 
-    var tdAltura = paciente.querySelector(".info-altura");
-    var altura = tdAltura.textContent;
+        //----- altura 
+        var tdAltura = paciente.querySelector(".info-altura");
+        var altura = tdAltura.textContent;
 
-    var tdImc = paciente.querySelector(".info-imc");
+        var tdImc = paciente.querySelector(".info-imc");
 
-    // iniciando variaveis como verdadeiras
-    var pesoEhValido = true;
-    var alturaEhValida = true;
+        // iniciando variaveis como verdadeiras
+        var pesoEhValido = true;
+        var alturaEhValida = true;
 
-    //validação 
-    if(peso <= 0  || peso >= 1000) {
-        
-        //inserindo falso se obedecer a condição do if
-        pesoEhValido = false;
-        tdImc.textContent = "Peso invalido!";
-    }
+        //validação 
+        if(peso <= 0  || peso >= 1000) {
+            
+            //inserindo falso se obedecer a condição do if
+            pesoEhValido = false;
+            tdImc.textContent = "Peso invalido!";
+            //coloca a cor da linha para vermelho
+            // paciente.style.color = "red"; ou da forma abaixo pegando direto do css
+            paciente.classList.add("paciente-invalido");
+        }
 
-    if(altura <= 0  || altura >= 3.00) {
-        alturaEhValida = false
-        tdImc.textContent = "Altura invalida!";
-    }
+        if(altura <= 0  || altura >= 3.00) {
+            alturaEhValida = false;
+            tdImc.textContent = "Altura invalida!";
+            paciente.classList.add("paciente-invalido");
+        }
 
 
-    if (alturaEhValida && pesoEhValido) {
+        if (alturaEhValida && pesoEhValido) {
 
-    //----- calculo do imc
-    //coloco () no calculo que eu quero que faça primeiro
-    var imc = peso / (altura * altura);
-    //tofixed coloca pra mostra somente duas casa decimais
-    tdImc.textContent = imc.toFixed(2);
-    }
+        //----- calculo do imc
+        //coloco () no calculo que eu quero que faça primeiro
+        var imc = peso / (altura * altura);
+        //tofixed coloca pra mostra somente duas casa decimais
+        tdImc.textContent = imc.toFixed(2);
+        }
     
-
     }
 
     
