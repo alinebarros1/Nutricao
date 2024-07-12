@@ -98,7 +98,7 @@ botaoAdicionar.addEventListener("click", function (event) {
     nomeTd.textContent = nome;
     pesoTd.textContent = peso;
     alturaTd.textContent = altura;
-    gorduraTd.textContent = gorduraTd;
+    gorduraTd.textContent = gordura;
 
     //adiciona como se as td fossem filhos da tr paciente
     pacienteTr.appendChild(nomeTd);
